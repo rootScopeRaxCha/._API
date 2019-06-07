@@ -1,0 +1,43 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 col-sm-8 col-xs-12 pokeSearch">
+			<form class="form-inline">
+				<div class="form-group">
+					<label class="text-white">Buscar Pokemon:</label>
+					<input type="text" class="form-control" placeholder="Pikachu" ng-model="foundPokemon">	
+					<label class="text-white">Limite de Pokemon a mostrar:</label>
+					<input type="number" class="form-control" placeholder="30" ng-model="limitShow">
+				</div>
+			</form>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-4 animate-repeat" ng-repeat="x in datas | orderBy: 'data.id' | limitTo:limitShow | filter: foundPokemon as results track by x.data.name" >
+			<div class="pokeInfo">
+				<div class="imgPokemon">
+					<img src="{{x.data.sprites.front_default}}" alt="Pokemon" class="pokeImg">
+					<!--<img src="{{  imgs.img  }}" alt="Pokemon" class="pokeImg">-->
+				</div>
+				<div class="namePokemon text-center">
+					<span class="names">
+						Nombre: {{ x.data.name }} ID:[{{ x.data.id }}]
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container animate-repeat" ng-if="results.length === 0">
+	<div class="row">
+		<div class="col-md-12">
+			<h1 class="text-center text-white">¡Sin resultados!</h1>
+		</div>
+	</div>
+</div>
+<!-- <div class="container">
+	<div class="row">
+		<div class="col-md-3" ng-repeat="x in datas">
+			<div class="imgPokemon">
+					<img src="{{x.data.sprites.front_default}}" alt="Pokemon" class="pokeImg">
+			</div>
+		</div>
+	</div>
+</div> -->

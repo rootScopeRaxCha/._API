@@ -1,0 +1,50 @@
+<header>
+	<nav class="navbar navbar-fixed-top navbar-inverse mynav" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header ">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-1">
+					<span class="sr-only">Menú</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a ui-sref="root.login" class="navbar-brand" ng-click="changeTitleHome">Poke-Api</a>
+			</div>
+			<div class="collapse navbar-collapse" id="navbar-1">
+				<ul class="nav navbar-nav">
+					<li>
+						<a ui-sref="root.login" ng-click="changeTitleHome()"><i class="fas fa-home"></i>Login</a>
+					</li>
+					<li class="">
+						<a ui-sref="root.pokeapi" ng-click="changeTitleJuegos()"><i class="fas fa-dot-circle"></i>Pokedex</a>
+					</li>
+					<li>
+						<a ui-sref="root.register" ng-click="changeTitleBlog()"><i class="fas fa-registered"></i>Registro</a>
+					</li>
+					<li class="dropdown">
+						<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button">
+							Categorías <span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li>
+								<a ui-sref="root.login" ng-click="changeTitleJuegos()">Login</a>
+							</li>
+							<li>
+								<a ui-sref="root.pokeapi" ng-click="changeTitleHome()">pokeApi</a>
+							</li>
+							<li>
+								<a ui-sref="root.register" ng-click="changeTitleHome()">Registro</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<!-- <form class="navbar-form navbar-right" role="search">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Buscar Pokemon" ng-model="foundPokemon">
+						<button type="button" class="btn btn-info"><i class="fas fa-search"></i></button>
+					</div>
+				</form> -->
+			</div>
+		</div>
+	</nav>
+	</header>
